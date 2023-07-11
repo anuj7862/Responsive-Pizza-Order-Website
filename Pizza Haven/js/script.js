@@ -14,14 +14,14 @@
 
 // scroll select left right button movement start
 
-var cards = document.querySelector('.menu .menuItem .scrollBox .cards');
-var btnPrev = document.querySelector('.btnPrev');
-var btnNext = document.querySelector('.menu .menuItem .scrollBox .scrollBtn .btnNext');
-var pizzaName = document.getElementById('pizzaName');
+let cards = document.querySelector('.menu .menuItem .scrollBox .cards');
+let btnPrev = document.querySelector('.btnPrev');
+let btnNext = document.querySelector('.menu .menuItem .scrollBox .scrollBtn .btnNext');
+let pizzaName = document.getElementById('pizzaName');
 
-var scrollValue = 0;
-var increaseValue = 41.7;
-var cardCount = 1;
+let scrollValue = 0;
+let increaseValue = 41.7;
+let cardCount = 1;
 
 btnPrev.addEventListener('click', ()=> {
     if(scrollValue !== 0)
@@ -51,24 +51,24 @@ btnNext.addEventListener('click', () => {
 });
 
 cards.addEventListener('click', (event) => {
-    var selectedValue = event.target.innerText;
+    let selectedValue = event.target.innerText;
     console.log(selectedValue);
 });
 // scroll select left right button movement end 
  
 // Menu input fields dropdown logic
 
-var size = document.getElementById('size');
-var crust = document.getElementById('crust');
-var sizeDropdown = document.getElementById('sizeDropdown');
-var crustDropdown = document.getElementById('crustDropdown');
+let size = document.getElementById('size');
+let crust = document.getElementById('crust');
+let sizeDropdown = document.getElementById('sizeDropdown');
+let crustDropdown = document.getElementById('crustDropdown');
 
 size.addEventListener('click', () => {
     sizeDropdown.style.display = 'block';
 });
 
 sizeDropdown.addEventListener('click', (event) => {
-    var selectedValue = event.target.innerText;
+    let selectedValue = event.target.innerText;
     size.value = selectedValue;
     sizeDropdown.style.display = 'none';
 });
@@ -79,7 +79,7 @@ crust.addEventListener('click', () => {
 });
 
 crustDropdown.addEventListener('click', (event) => {
-    var selectedValue = event.target.innerText;
+    let selectedValue = event.target.innerText;
     crust.value = selectedValue;
     crustDropdown.style.display = 'none';
 });
@@ -88,22 +88,22 @@ crustDropdown.addEventListener('click', (event) => {
 
 
  window.addEventListener('resize',() => {
-    var movingImage = document.getElementById('movingImage');
-    var aboutEnd = document.querySelector('.about .content .end');
-    var aboutEndOffSet = aboutEnd.offsetTop + 100;
-    var scrollPosition = window.pageYOffset;
-    var subcontentImage = document.querySelectorAll('.subcontentImage');
-    var content = document.querySelector('.about .content');
-    var aboutHeading = document.querySelector('.about .heading');
+    let movingImage = document.getElementById('movingImage');
+    let aboutEnd = document.querySelector('.about .content .end');
+    let aboutEndOffSet = aboutEnd.offsetTop + 100;
+    let scrollPosition = window.pageYOffset;
+    let subcontentImage = document.querySelectorAll('.subcontentImage');
+    let content = document.querySelector('.about .content');
+    let aboutHeading = document.querySelector('.about .heading');
 
-    //var aboutContent = document.querySelector('.about .content');
+    //let aboutContent = document.querySelector('.about .content');
     if(window.innerWidth <1300 || scrollPosition > aboutEndOffSet) {
         movingImage.style.opacity = 0;
         movingImage.style.zIndex = -10;
         aboutHeading.style.display = flex;
 
-        for(var i=0; i< subcontentImage.length; i++){
-            var element = subcontentImage[i];
+        for(let i=0; i< subcontentImage.length; i++){
+            let element = subcontentImage[i];
             element.style.display = 'block';
         }
         content.style.width = '80%';
@@ -116,8 +116,8 @@ crustDropdown.addEventListener('click', (event) => {
         movingImage.style.right= '20vw';
         aboutHeading.style.display = 'none';
 
-        for(var i=0; i< subcontentImage.length; i++){
-            var element = subcontentImage[i];
+        for(let i=0; i< subcontentImage.length; i++){
+            let element = subcontentImage[i];
             element.style.display = 'none';
         }
         content.style.width = '40%';
@@ -127,27 +127,27 @@ crustDropdown.addEventListener('click', (event) => {
  });
 
  window.addEventListener('scroll', () => {
-    var image = document.querySelector('.moving-image');
-    var imageOff = document.querySelector('.about .imageOffSetTop');
-    var aboutContent = document.querySelector('.about .content .pizza');
-    var pizzaBase = document.querySelector('.about .content .pizzaBase');
-    var pizzaSauce = document.querySelector('.about .content .pizzaSauce');
-    var pizzaDetails = document.querySelector('.about .content .pizzaDetails');
-    var aboutEnd = document.querySelector('.about .content .end');
-    var movingImage = document.getElementById('movingImage');
-    var subcontentImage = document.querySelectorAll('.subcontentImage');
-    var content = document.querySelector('.about .content');
-    var aboutHeading = document.querySelector('.about .heading');
+    let image = document.querySelector('.moving-image');
+    let imageOff = document.querySelector('.about .imageOffSetTop');
+    let aboutContent = document.querySelector('.about .content .pizza');
+    let pizzaBase = document.querySelector('.about .content .pizzaBase');
+    let pizzaSauce = document.querySelector('.about .content .pizzaSauce');
+    let pizzaDetails = document.querySelector('.about .content .pizzaDetails');
+    let aboutEnd = document.querySelector('.about .content .end');
+    let movingImage = document.getElementById('movingImage');
+    let subcontentImage = document.querySelectorAll('.subcontentImage');
+    let content = document.querySelector('.about .content');
+    let aboutHeading = document.querySelector('.about .heading');
 
-    var imageOffset = imageOff.offsetTop;
-    var scrollPosition = window.pageYOffset;
-    var aboutContentOffSet = aboutContent.offsetTop + 80;
-    var pizzaBaseOffSet = pizzaBase.offsetTop + 90;
-    var pizzaSauceOffSet = pizzaSauce.offsetTop + 90;
-    var pizzaDetailsOffSet = pizzaDetails.offsetTop + 90;
-    var aboutEndOffSet = aboutEnd.offsetTop + 100;
+    let imageOffset = imageOff.offsetTop;
+    let scrollPosition = window.pageYOffset;
+    let aboutContentOffSet = aboutContent.offsetTop + 80;
+    let pizzaBaseOffSet = pizzaBase.offsetTop + 90;
+    let pizzaSauceOffSet = pizzaSauce.offsetTop + 90;
+    let pizzaDetailsOffSet = pizzaDetails.offsetTop + 90;
+    let aboutEndOffSet = aboutEnd.offsetTop + 100;
 
-    var commonMargin = 80;
+    let commonMargin = 80;
     //hide moving image if width is less than....
     if(scrollPosition > aboutEndOffSet) {
         image.style.opacity = 0;
@@ -159,8 +159,8 @@ crustDropdown.addEventListener('click', (event) => {
         console.log('2');
         if(window.innerWidth > 1300) 
         {
-            for(var i=0; i< subcontentImage.length; i++){
-                var element = subcontentImage[i];
+            for(let i=0; i< subcontentImage.length; i++){
+                let element = subcontentImage[i];
                 element.style.display = 'none';
             }
             content.style.width = '40%';
@@ -177,14 +177,14 @@ crustDropdown.addEventListener('click', (event) => {
         image.style.opacity = 0;
         image.style.zIndex = -10;
         aboutHeading.style.display = 'flex';
-        for(var i=0; i< subcontentImage.length; i++){
-            var element = subcontentImage[i];
+        for(let i=0; i< subcontentImage.length; i++){
+            let element = subcontentImage[i];
             element.style.display = 'block';
         }
         content.style.width = '80%';
         content.style.marginTop = '20vh';
     }
-    //var video = document.querySelector('.home .background-video');
+    //let video = document.querySelector('.home .background-video');
     // if(scrollPosition > aboutContentOffSet) {
     //     video.style.display = 'none';
     // }
@@ -194,7 +194,7 @@ crustDropdown.addEventListener('click', (event) => {
     //moving image transform....
     if(scrollPosition >= imageOffset && scrollPosition <= aboutContentOffSet ) {
         image.style.position = 'absolute';
-            var translateZ = (scrollPosition- imageOffset) /(1.4);
+            let translateZ = (scrollPosition- imageOffset) /(1.4);
             console.log(translateZ, "##");
             
             image.style.transform = 'translateY(-'+ translateZ +'px) translateX(' + translateZ + 'px) rotate(' + translateZ/2 +'deg)';
